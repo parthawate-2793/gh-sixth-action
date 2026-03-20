@@ -4,8 +4,16 @@ on:
     branches:
       - main
       - dev
+
+env:
+  MONGODB_DB_NAME: gha-demo
+
 jobs:
   test:
+    env:
+      MONGODB_CLUSTER_ADDRESS: github-cluster.0ntahrk.mongodb.net
+      MONGODB_USERNAME: mongo_user_parth
+      MONGODB_PASSWORD: mongo_user_parth
     environment: testing
     runs-on: ubuntu-latest
     steps:
